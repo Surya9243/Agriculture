@@ -56,13 +56,12 @@ body::-webkit-scrollbar {
     color: teal;
     max-width: max-content;
     text-align: center;
-    background-color: red;
 }
 .selectMenu{
     display: none;
+    position: fixed;
     margin-top: 100px;
     width: 20vw;
-    position: absolute;
     top: -20px;
 }
 .abc{
@@ -246,7 +245,7 @@ align-items: center;
 
 .navCart1{
     border: 3px solid;
-    position: absolute;
+    position: fixed;
     background-color: rgb(277, 277,277,.9);
     backdrop-filter: (10px);
     height: max-content;
@@ -336,7 +335,6 @@ footer ul{
       display: flex;
       justify-content: space-evenly;
 align-items: center;      gap: 2%; 
-      height: 10vh;
 }
 footer li{
 list-style: none;
@@ -349,4 +347,35 @@ footer li:hover{
 .footerOne{
     display: flex;
     justify-content: space-around;
+}
+.info{
+    height: max-content;
+    display: flex;
+    margin-top: 30px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+}
+.info p{
+    font-size: 20px;
+}
+.info ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.portel{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.last{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 20px;
+}
+.last a{
+    color: yellow;
+    text-decoration: none;
 }

@@ -239,16 +239,18 @@ let cartItems = document.querySelector('.cartItems')
 let sum = 0;
 
 let cartList = []
+console.log(cartList)
 for (let i = 0; i < add.length; i++) {
+    let val = Math.random();
     add[i].addEventListener('click', () => {
-        cartItems.innerText++
+       Number(cartItems.innerText++)
         cartList.push(allData[i])
         console.log(allData[i])
         cartDetails.innerHTML = ' '
         for(let j=0;j<cartList.length;j++){
 
             cartDetails.innerHTML +=`
-            <div class='cartD1' name="${allData[i].id}">
+            <div class='cartD1' name="${val}">
             <img src="${cartList[j].img}">        
             <div class='cartD3'>
             <h2>${cartList[j].Names}</h2>
@@ -259,7 +261,7 @@ for (let i = 0; i < add.length; i++) {
             <p class="cartD6">Amt :-</p> <p class="cartD7">${cartList[j].price*itemCount[i].innerText} </p>
             </div>
                     </div>
-                    <button class='remove' name="${allData[i].id}">Remove</button>
+                    <button class='remove' name="${val}">Remove</button>
                     </div>
                     `
                     }
@@ -272,23 +274,17 @@ for (let i = 0; i < add.length; i++) {
     })
 }
 
-let abc = document.querySelectorAll('.cartDetails cartD1')
+let cartD1   = document.querySelectorAll('.cartD1')
 cart.addEventListener("click", () => {
     navCart1.classList.toggle('togle')
 })
 
-// let remove = document.querySelectorAll('.remove')
-
-// function removeItem(e) {
-//     console.log(" list"+cartList)
-//     const filterData = cartList.filter((val)=> val.id != e)
- 
-//    showCart(filterData)
-// }
-
-let ct = document.querySelector('.cartDetails');
-ct.addEventListener('click', (e) => {
+cartDetails.addEventListener('click', (e) => {
     if(e.target.matches('button')) {
-        alert(e.target.getAttribute('name'))
+        
+        let name = e.target.getAttribute('name')
+        let d = document.querySelector(`div[name="${name}"]`)
+        console.log(d, name)
+        d.remove()
     }
 })
